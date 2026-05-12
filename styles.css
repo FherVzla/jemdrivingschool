@@ -178,9 +178,9 @@ body::before {
 }
 
 .name-first {
-  font-size: clamp(2.4rem, 10vw, 3.8rem);
+  font-size: clamp(2.8rem, 12vw, 4.5rem);
   font-weight: 800;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   background: linear-gradient(135deg, #8a6010, #c9a227, #fff8c0, #e8bf3f, #c9a227, #8a6010);
   background-size: 250% auto;
   -webkit-background-clip: text;
@@ -197,14 +197,15 @@ body::before {
 }
 
 .name-last {
-  font-size: clamp(2.4rem, 10vw, 3.8rem);
+  font-size: clamp(1.4rem, 6vw, 2rem);
   font-weight: 800;
   color: var(--text-gray);
-  letter-spacing: 0.06em;
-  line-height: 1.1;
+  letter-spacing: 0.18em;
+  line-height: 1.2;
   display: block;
   text-align: center;
   text-shadow: 0 0 30px rgba(208, 212, 228, 0.2);
+  white-space: nowrap;
 }
 
 /* ===== SEPARADOR ===== */
@@ -273,14 +274,13 @@ body::before {
 }
 
 .service-card {
-  background: rgba(18, 26, 52, 0.82);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(201, 162, 39, 0.25);
+  background: rgba(28, 36, 65, 0.95);
+  border: 1px solid rgba(201, 162, 39, 0.45);
   border-radius: 16px;
   padding: 1.4rem 1.5rem;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
 }
 
 .service-card::before {
