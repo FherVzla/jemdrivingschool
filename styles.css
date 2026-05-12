@@ -247,6 +247,143 @@ body::before {
   margin-top: 0.4rem;
 }
 
+/* ===== SERVICIOS ===== */
+.services-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.services-intro {
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+}
+
+.services-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.service-card {
+  background: rgba(18, 26, 52, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 16px;
+  padding: 1.4rem 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,162,39,0.6), transparent);
+}
+
+.service-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.service-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.service-card-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--gold-primary);
+  text-transform: uppercase;
+}
+
+.service-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.service-list li {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-gray);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.service-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 5px;
+  height: 5px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(201,162,39,0.5);
+}
+
+.service-tag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #0d1120;
+  background: var(--gold-primary);
+  border-radius: 4px;
+  padding: 1px 6px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.service-subtag {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 2px;
+  padding-left: 0;
+}
+
+/* ===== EJECUTIVA BADGE ===== */
+.ejecutiva-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+.ejecutiva-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,162,39,0.4));
+}
+.ejecutiva-line:last-child {
+  background: linear-gradient(90deg, rgba(201,162,39,0.4), transparent);
+}
+.ejecutiva-text {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  color: var(--gold-primary);
+  white-space: nowrap;
+}
+
 /* ===== CONTACTO ===== */
 .contact-section {
   width: 100%;
@@ -381,11 +518,67 @@ body::before {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (min-width: 480px) {
+
+/* Móvil pequeño (hasta 380px) */
+@media (max-width: 380px) {
+  .page-wrapper {
+    padding: 1.5rem 1rem 3rem;
+    gap: 1.8rem;
+  }
+  .logo-letter {
+    width: 38px; height: 38px; font-size: 1rem;
+  }
+  .logo-text { font-size: 0.55rem; letter-spacing: 0.2em; }
+  .card { padding: 1.8rem 1.2rem; }
+  .name-first, .name-last { font-size: 2.2rem; }
+  .gold-divider { width: 80%; }
+  .title-text   { font-size: 0.6rem; letter-spacing: 0.22em; }
+  .company-text { font-size: 0.68rem; }
+  .location-text { font-size: 0.65rem; }
+  .services-intro { font-size: 0.72rem; }
+  .service-card   { padding: 1.1rem 1.1rem; }
+  .service-card-title { font-size: 0.7rem; }
+  .service-list li    { font-size: 0.73rem; }
+  .btn  { padding: 0.9rem 1.1rem; }
+  .btn-label    { font-size: 0.75rem; }
+  .btn-sublabel { font-size: 0.68rem; }
+  .qr-card { padding: 1.4rem 1rem; }
+  #qrcode img, #qrcode canvas { width: 150px !important; height: 150px !important; }
+}
+
+/* Móvil estándar (381px – 480px) */
+@media (min-width: 381px) and (max-width: 480px) {
+  .page-wrapper { padding: 2rem 1.2rem 3.5rem; gap: 2rem; }
+  .card         { padding: 2rem 1.5rem; }
+  .name-first, .name-last { font-size: 2.6rem; }
+  .btn          { min-height: 52px; }
+}
+
+/* Tablet y escritorio (481px+) */
+@media (min-width: 481px) {
   .page-wrapper { padding: 3rem 2rem 5rem; }
   .card         { padding: 3rem 2.5rem; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 }
-@media (max-width: 360px) {
-  .name-first, .name-last { font-size: 2.6rem; }
-  .logo-letter             { width: 40px; height: 40px; font-size: 1.1rem; }
+
+/* Mejoras táctiles generales en móvil */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 54px;
+    padding: 1rem 1.4rem;
+  }
+  .btn:hover {
+    transform: none;
+  }
+  .btn:active {
+    transform: scale(0.97);
+    filter: brightness(0.95);
+  }
+  .logo-letter:active {
+    transform: scale(0.95);
+  }
 }
