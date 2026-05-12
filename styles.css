@@ -197,15 +197,14 @@ body::before {
 }
 
 .name-last {
-  font-size: clamp(1.4rem, 6vw, 2rem);
+  font-size: clamp(1.1rem, 5vw, 1.6rem);
   font-weight: 800;
   color: var(--text-gray);
-  letter-spacing: 0.18em;
+  letter-spacing: 0.22em;
   line-height: 1.2;
   display: block;
   text-align: center;
   text-shadow: 0 0 30px rgba(208, 212, 228, 0.2);
-  white-space: nowrap;
 }
 
 /* ===== SEPARADOR ===== */
@@ -294,6 +293,7 @@ body::before {
 .service-card-header {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.7rem;
   margin-bottom: 1rem;
 }
@@ -399,58 +399,50 @@ body::before {
   color: var(--text-muted);
 }
 .contact-buttons {
-  width: 100%;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 /* ===== BOTONES ===== */
 .btn {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem 1.4rem;
-  border-radius: 14px;
+  justify-content: center;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
   text-decoration: none;
   color: white;
-  font-family: var(--font-main);
   transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
-  width: 100%;
 }
-.btn:hover  { transform: translateY(-3px) scale(1.01); }
-.btn:active { transform: translateY(0) scale(0.99); }
+.btn:hover  { transform: translateY(-4px) scale(1.08); }
+.btn:active { transform: scale(0.95); }
 
 .btn-whatsapp {
   background: linear-gradient(135deg, #25d366, #128c7e);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4), 0 0 0 1px rgba(37,211,102,0.2);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
   animation: wpGlow 2.5s ease-in-out infinite alternate;
 }
 @keyframes wpGlow {
-  from { box-shadow: 0 8px 25px rgba(37,211,102,0.35), 0 0 0 1px rgba(37,211,102,0.2); }
-  to   { box-shadow: 0 8px 45px rgba(37,211,102,0.6),  0 0 0 1px rgba(37,211,102,0.4); }
+  from { box-shadow: 0 8px 25px rgba(37,211,102,0.4); }
+  to   { box-shadow: 0 8px 45px rgba(37,211,102,0.75); }
 }
 .btn-whatsapp:hover { filter: brightness(1.1); }
 
 .btn-email {
-  background: rgba(18, 26, 50, 0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid var(--gold-dim);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+  background: rgba(28, 36, 65, 0.95);
+  border: 1.5px solid var(--gold-primary);
+  box-shadow: 0 8px 25px rgba(201, 162, 39, 0.25);
 }
 .btn-email:hover {
-  border-color: var(--gold-primary);
-  box-shadow: 0 12px 35px rgba(201, 162, 39, 0.25);
+  box-shadow: 0 12px 35px rgba(201, 162, 39, 0.45);
 }
 
-.btn-icon { width: 28px; height: 28px; fill: currentColor; flex-shrink: 0; }
+.btn-icon { width: 32px; height: 32px; fill: currentColor; }
 .btn-whatsapp .btn-icon { color: white; }
 .btn-email    .btn-icon { color: var(--gold-primary); }
-
-.btn-content { display: flex; flex-direction: column; align-items: flex-start; }
-.btn-label   { font-size: 0.82rem; font-weight: 700; letter-spacing: 0.1em; }
-.btn-sublabel { font-size: 0.73rem; font-weight: 400; opacity: 0.8; margin-top: 2px; }
 
 /* ===== QR ===== */
 .qr-section { width: 100%; }
@@ -558,11 +550,6 @@ body::before {
 @media (min-width: 481px) {
   .page-wrapper { padding: 3rem 2rem 5rem; }
   .card         { padding: 3rem 2.5rem; }
-  .services-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
 }
 
 /* Mejoras táctiles generales en móvil */
