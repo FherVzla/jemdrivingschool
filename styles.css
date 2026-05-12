@@ -245,6 +245,13 @@ body::before {
   color: var(--gold-primary);
   opacity: 0.85;
 }
+.location-text {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+  margin-top: 0.4rem;
+}
 
 /* ===== CONTACTO ===== */
 .contact-section {
