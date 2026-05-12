@@ -91,6 +91,15 @@ body::before {
   gap: 2.5rem;
 }
 
+/* ===== HERO SECTION ===== */
+.hero-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 /* ===== LOGO ===== */
 .logo-container {
   display: flex;
@@ -133,39 +142,17 @@ body::before {
 /* ===== TARJETA PRINCIPAL (GLASSMORPHISMO) ===== */
 .card {
   width: 100%;
-  background: var(--bg-card);
+  background: rgba(18, 26, 52, 0.82);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(201, 162, 39, 0.3);
+  border: 1px solid rgba(201, 162, 39, 0.45);
   border-radius: 20px;
   padding: 2.5rem 2rem;
   text-align: center;
   position: relative;
-  overflow: visible;
-  transition: transform 0.1s ease;
-  isolation: isolate;
-  animation: cardGlow 3s ease-in-out infinite;
-}
-
-/* Borde dorado giratorio */
-.card::after {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 22px;
-  background: conic-gradient(
-    from var(--card-angle),
-    transparent 0%,
-    rgba(201, 162, 39, 0.9) 7%,
-    rgba(255, 235, 120, 0.6) 12%,
-    transparent 20%
-  );
-  z-index: -1;
-  animation: spinBorder 5s linear infinite;
-}
-
-@keyframes spinBorder {
-  to { --card-angle: 360deg; }
+  overflow: hidden;
+  transition: transform 0.1s ease, box-shadow 1.5s ease-in-out;
+  box-shadow: 0 0 40px rgba(201,162,39,0.15), 0 25px 60px rgba(0,0,0,0.55);
 }
 
 @keyframes cardGlow {
@@ -184,10 +171,14 @@ body::before {
 }
 
 /* ===== NOMBRE ===== */
-.name-block { line-height: 1; }
+.name-block {
+  line-height: 1;
+  width: 100%;
+  text-align: center;
+}
 
 .name-first {
-  font-size: clamp(3rem, 13vw, 4.8rem);
+  font-size: clamp(2.4rem, 10vw, 3.8rem);
   font-weight: 800;
   letter-spacing: 0.06em;
   background: linear-gradient(135deg, #8a6010, #c9a227, #fff8c0, #e8bf3f, #c9a227, #8a6010);
@@ -196,6 +187,7 @@ body::before {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1;
+  display: block;
   animation: shimmerText 3.5s linear infinite;
 }
 
@@ -205,11 +197,13 @@ body::before {
 }
 
 .name-last {
-  font-size: clamp(3rem, 13vw, 4.8rem);
+  font-size: clamp(2.4rem, 10vw, 3.8rem);
   font-weight: 800;
   color: var(--text-gray);
   letter-spacing: 0.06em;
   line-height: 1.1;
+  display: block;
+  text-align: center;
   text-shadow: 0 0 30px rgba(208, 212, 228, 0.2);
 }
 
