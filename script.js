@@ -387,8 +387,8 @@ document.addEventListener('DOMContentLoaded', () => {
     drawHeadlights(W, H);
     drawSparkles(W, H);
 
-    // Carreteras laterales (pantallas > 550px)
-    if (W > 550) {
+    // Carreteras laterales (solo en pantallas anchas, no en teléfonos)
+    if (W > 780) {
       sideDash   = (sideDash   + SIDE_SPD * 1.1) % (30 + 24);
       sideOffset = (sideOffset + SIDE_SPD) % (CONE_GAP * 3);
 

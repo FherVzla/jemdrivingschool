@@ -509,11 +509,12 @@ body::before {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.6rem;
+  justify-content: center;
+  gap: 0.55rem;
   background: rgba(201, 162, 39, 0.08);
   border: 1px solid rgba(201, 162, 39, 0.35);
   border-radius: 14px;
-  padding: 1.2rem 1.4rem;
+  padding: 1.3rem 1.2rem;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0,0,0,0.25);
 }
@@ -521,30 +522,38 @@ body::before {
 .idioma-icon {
   font-size: 2rem;
   line-height: 1;
+  display: block;
+  text-align: center;
 }
 
 .idioma-text {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
   align-items: center;
+  gap: 0.3rem;
+  width: 100%;
 }
 
 .idioma-title {
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: var(--gold-primary);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.03em;
   line-height: 1.3;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .idioma-sub {
-  font-size: 0.73rem;
+  font-size: 0.74rem;
   font-weight: 400;
   color: var(--text-gray);
   line-height: 1.55;
   letter-spacing: 0.01em;
-  max-width: 30ch;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 /* Mejoras táctiles generales en móvil */
