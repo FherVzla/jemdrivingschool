@@ -83,12 +83,14 @@ body::before {
   position: relative;
   z-index: 1;
   max-width: 480px;
+  width: 100%;
   margin: 0 auto;
-  padding: 2.5rem 1.5rem 4rem;
+  padding: 2rem 1.2rem 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  box-sizing: border-box;
 }
 
 /* ===== HERO SECTION ===== */
@@ -99,45 +101,6 @@ body::before {
   align-items: center;
   gap: 1.5rem;
 }
-
-/* ===== LOGO ===== */
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.6rem;
-}
-
-.logo-badge { display: flex; gap: 5px; }
-
-.logo-letter {
-  width: 46px; height: 46px;
-  background: var(--grad-gold);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.35rem;
-  font-weight: 800;
-  color: #0d1120;
-  box-shadow: 0 0 20px rgba(201, 162, 39, 0.5), 0 4px 15px rgba(0,0,0,0.4);
-  animation: logoPulse 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes logoPulse {
-  from { box-shadow: 0 0 15px rgba(201,162,39,0.4), 0 4px 15px rgba(0,0,0,0.4); }
-  to   { box-shadow: 0 0 35px rgba(201,162,39,0.75), 0 4px 20px rgba(0,0,0,0.5); }
-}
-
-.logo-text {
-  display: flex;
-  gap: 8px;
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.28em;
-  color: var(--text-muted);
-}
-.logo-school { color: var(--gold-primary); }
 
 /* ===== TARJETA PRINCIPAL (GLASSMORPHISMO) ===== */
 .card {
@@ -377,9 +340,9 @@ body::before {
   background: linear-gradient(90deg, rgba(201,162,39,0.4), transparent);
 }
 .ejecutiva-text {
-  font-size: 0.65rem;
+  font-size: clamp(0.52rem, 2.8vw, 0.65rem);
   font-weight: 700;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.18em;
   color: var(--gold-primary);
   white-space: nowrap;
 }
@@ -511,38 +474,26 @@ body::before {
 
 /* ===== RESPONSIVE ===== */
 
-/* Móvil pequeño (hasta 380px) */
-@media (max-width: 380px) {
-  .page-wrapper {
-    padding: 1.5rem 1rem 3rem;
-    gap: 1.8rem;
-  }
-  .logo-letter {
-    width: 38px; height: 38px; font-size: 1rem;
-  }
-  .logo-text { font-size: 0.55rem; letter-spacing: 0.2em; }
-  .card { padding: 1.8rem 1.2rem; }
-  .name-first, .name-last { font-size: 2.2rem; }
-  .gold-divider { width: 80%; }
-  .title-text   { font-size: 0.6rem; letter-spacing: 0.22em; }
-  .company-text { font-size: 0.68rem; }
-  .location-text { font-size: 0.65rem; }
-  .services-intro { font-size: 0.72rem; }
-  .service-card   { padding: 1.1rem 1.1rem; }
-  .service-card-title { font-size: 0.7rem; }
-  .service-list li    { font-size: 0.73rem; }
-  .btn  { padding: 0.9rem 1.1rem; }
-  .btn-label    { font-size: 0.75rem; }
-  .btn-sublabel { font-size: 0.68rem; }
-  .qr-card { padding: 1.4rem 1rem; }
-  #qrcode img, #qrcode canvas { width: 150px !important; height: 150px !important; }
+/* Móvil pequeño (hasta 360px) */
+@media (max-width: 360px) {
+  .page-wrapper   { padding: 1.2rem 0.85rem 3rem; gap: 1.5rem; }
+  .card           { padding: 1.6rem 1rem; }
+  .name-first     { font-size: 2rem; }
+  .name-last      { font-size: 1rem; letter-spacing: 0.12em; }
+  .gold-divider   { width: 75%; }
+  .service-card   { padding: 1rem; }
+  .service-card-title { font-size: 0.68rem; }
+  .service-list li    { font-size: 0.71rem; }
+  .qr-card        { padding: 1.2rem 0.9rem; }
+  #qrcode img, #qrcode canvas { width: 145px !important; height: 145px !important; }
+  .idioma-title   { font-size: 0.76rem; }
+  .idioma-sub     { font-size: 0.67rem; }
 }
 
-/* Móvil estándar (381px – 480px) */
-@media (min-width: 381px) and (max-width: 480px) {
-  .page-wrapper { padding: 2rem 1.2rem 3.5rem; gap: 2rem; }
-  .card         { padding: 2rem 1.5rem; }
-  .name-first, .name-last { font-size: 2.6rem; }
+/* Móvil estándar (361px – 480px) */
+@media (min-width: 361px) and (max-width: 480px) {
+  .page-wrapper { padding: 1.8rem 1.1rem 3.5rem; gap: 1.8rem; }
+  .card         { padding: 2rem 1.4rem; }
   .btn          { min-height: 52px; }
 }
 
@@ -550,6 +501,50 @@ body::before {
 @media (min-width: 481px) {
   .page-wrapper { padding: 3rem 2rem 5rem; }
   .card         { padding: 3rem 2.5rem; }
+}
+
+/* ===== BANNER IDIOMA ===== */
+.idioma-banner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(201, 162, 39, 0.08);
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 14px;
+  padding: 1.2rem 1.4rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.idioma-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.idioma-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.idioma-title {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--gold-primary);
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+.idioma-sub {
+  font-size: 0.73rem;
+  font-weight: 400;
+  color: var(--text-gray);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  max-width: 30ch;
 }
 
 /* Mejoras táctiles generales en móvil */
